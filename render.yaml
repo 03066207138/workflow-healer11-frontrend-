@@ -3,7 +3,6 @@ services:
     name: workflow-healer-frontend
     env: static
     plan: free
-    rootDir: src
     buildCommand: npm install && npm run build
     publishPath: build
     envVars:
