@@ -2,14 +2,9 @@ services:
   - type: web
     name: workflow-healer-frontend
     env: static
-    plan: free
     rootDir: healer-dashboard
     buildCommand: npm install && npm run build
     publishPath: build
     envVars:
       - key: REACT_APP_BACKEND_URL
         value: https://workflow-healer11-2.onrender.com
-    routes:
-      - type: rewrite
-        source: /*
-        destination: /index.html
