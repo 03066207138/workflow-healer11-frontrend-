@@ -1,5 +1,3 @@
-
-
 {
   "name": "healer-dashboard",
   "version": "0.1.0",
@@ -18,8 +16,6 @@
     "eject": "react-scripts eject"
   }
 }
-
-
 {
   "name": "healer-dashboard",
   "version": "0.1.0",
