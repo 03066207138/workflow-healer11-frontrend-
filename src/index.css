@@ -1,0 +1,431 @@
+/* ======================================================
+   💎 Workflow Healer — Elegant React Dashboard CSS
+   Neon Gradient • Glassmorphism • Smooth Animations
+   ====================================================== */
+
+/* Root Theme Colors */
+:root {
+  --bg1: #0f172a;
+  --bg2: #1e293b;
+  --text: #f8fafc;
+  --accent: #60a5fa;
+  --green: #34d399;
+  --red: #f87171;
+  --yellow: #fde047;
+}
+
+/* Global Styles */
+body {
+  background: radial-gradient(circle at top left, var(--bg1), var(--bg2));
+  color: var(--text);
+  font-family: "Poppins", system-ui, sans-serif;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1;
+  padding: 2rem 4rem;
+  animation: fadeIn 0.7s ease;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(15, 23, 42, 0.95);
+  padding: 1rem 2rem;
+  border-bottom: 1px solid rgba(96, 165, 250, 0.3);
+  box-shadow: 0 4px 18px rgba(96, 165, 250, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(12px);
+}
+
+.nav-left h1.logo {
+  font-size: 1.6rem;
+  color: var(--accent);
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.nav-left .status {
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+.nav-right {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.nav-btn {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 0.4rem 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+  border-color: var(--accent);
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  color: #fff;
+  box-shadow: 0 0 12px rgba(96, 165, 250, 0.4);
+}
+
+.nav-btn.active {
+  background: linear-gradient(135deg, #2563eb, #60a5fa);
+  color: white;
+  box-shadow: 0 0 16px rgba(96, 165, 250, 0.4);
+}
+
+/* Cards */
+.card {
+  background: rgba(30, 41, 59, 0.65);
+  border: 1px solid rgba(96, 165, 250, 0.25);
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 18px rgba(96, 165, 250, 0.1);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 24px rgba(96, 165, 250, 0.25);
+}
+
+/* Metrics */
+.metrics {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.metric {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(96, 165, 250, 0.3);
+  border-radius: 12px;
+  text-align: center;
+  padding: 1rem;
+  min-width: 150px;
+  flex: 1;
+  box-shadow: 0 0 14px rgba(96, 165, 250, 0.1);
+  transition: 0.3s ease;
+}
+
+.metric:hover {
+  box-shadow: 0 0 22px rgba(96, 165, 250, 0.3);
+  transform: translateY(-3px);
+}
+
+/* Buttons */
+.btn {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 0 10px rgba(96, 165, 250, 0.25);
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, #1d4ed8, #2563eb);
+  box-shadow: 0 0 14px rgba(96, 165, 250, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn-green {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+}
+.btn-green:hover {
+  box-shadow: 0 0 14px rgba(52, 211, 153, 0.4);
+}
+
+.btn-red {
+  background: linear-gradient(135deg, #f87171, #dc2626);
+}
+.btn-red:hover {
+  box-shadow: 0 0 14px rgba(248, 113, 113, 0.5);
+}
+
+/* Inputs */
+input, textarea {
+  width: 100%;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(96, 165, 250, 0.3);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 0.6rem;
+  margin-bottom: 0.9rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.2s;
+}
+input:focus, textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 10px rgba(96, 165, 250, 0.3);
+}
+
+/* Logs */
+.logs {
+  max-height: 420px;
+  overflow-y: auto;
+  border-radius: 10px;
+  padding-right: 8px;
+}
+.log-line {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(96, 165, 250, 0.3);
+  margin: 0.3rem 0;
+  border-radius: 6px;
+  padding: 0.5rem 0.7rem;
+  font-size: 0.9rem;
+  box-shadow: 0 0 8px rgba(96, 165, 250, 0.1);
+}
+
+/* Alerts */
+.alert {
+  background: rgba(52, 211, 153, 0.1);
+  border: 1px solid rgba(52, 211, 153, 0.4);
+  border-radius: 10px;
+  padding: 1rem;
+  color: #a7f3d0;
+  font-weight: 500;
+  box-shadow: 0 0 14px rgba(52, 211, 153, 0.15);
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+table th, table td {
+  border: 1px solid rgba(96, 165, 250, 0.3);
+  padding: 0.6rem;
+  text-align: center;
+}
+table th {
+  background: rgba(30, 41, 59, 0.9);
+  color: var(--accent);
+}
+table tr:hover {
+  background: rgba(30, 41, 59, 0.6);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 1rem;
+  border-top: 1px solid rgba(96, 165, 250, 0.2);
+  color: #94a3b8;
+  font-size: 0.9rem;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(10px);
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+/* ===============================
+   🧠 Simulation & Webhook Buttons
+   =============================== */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.controls button,
+.stButton > button {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 0.7rem 1.3rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  box-shadow: 0 0 12px rgba(96, 165, 250, 0.25);
+  transition: all 0.3s ease;
+  min-width: 180px;
+  text-align: center;
+}
+
+.controls button:hover {
+  background: linear-gradient(135deg, #1d4ed8, #3b82f6);
+  box-shadow: 0 0 20px rgba(96, 165, 250, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Special Colors */
+.controls button.btn-green {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+}
+.controls button.btn-green:hover {
+  box-shadow: 0 0 18px rgba(52, 211, 153, 0.5);
+}
+
+.controls button.btn-red {
+  background: linear-gradient(135deg, #ef4444, #b91c1c);
+}
+.controls button.btn-red:hover {
+  box-shadow: 0 0 18px rgba(248, 113, 113, 0.6);
+}
+
+/* Optional: emoji spacing fix */
+.controls button span {
+  margin-right: 6px;
+}
+
+
+/* =======================================================
+   🧾 Create Ticket Button — Neon Glow Style
+   ======================================================= */
+
+button.bg-blue-600 {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 0.7rem 1.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  box-shadow: 0 0 12px rgba(96, 165, 250, 0.25);
+  transition: all 0.25s ease-in-out;
+  outline: none;
+}
+
+button.bg-blue-600:hover {
+  background: linear-gradient(135deg, #1e40af, #3b82f6);
+  box-shadow: 0 0 20px rgba(96, 165, 250, 0.55);
+  transform: translateY(-2px);
+}
+
+/* Active / Click effect */
+button.bg-blue-600:active {
+  transform: scale(0.97);
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.4);
+}
+
+/* Optional pulse animation for extra flair */
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 10px rgba(96, 165, 250, 0.25); }
+  50% { box-shadow: 0 0 18px rgba(96, 165, 250, 0.5); }
+  100% { box-shadow: 0 0 10px rgba(96, 165, 250, 0.25); }
+}
+
+button.bg-blue-600:hover {
+  animation: pulseGlow 1.6s infinite;
+}
+
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #1e3a8a, #1e40af);
+  padding: 1rem 2rem;
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar .logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #93c5fd;
+  text-shadow: 0 0 10px #3b82f6;
+}
+
+.navbar .status {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  margin-top: 0.3rem;
+}
+
+.ok {
+  color: #22c55e;
+  font-weight: 600;
+}
+
+.fail {
+  color: #f87171;
+  font-weight: 600;
+}
+
+.nav-links {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.nav-links button {
+  background: rgba(59, 130, 246, 0.2);
+  border: 1px solid rgba(147, 197, 253, 0.3);
+  border-radius: 8px;
+  color: #f1f5f9;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.nav-links button:hover {
+  background: rgba(59, 130, 246, 0.35);
+  transform: translateY(-2px);
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .metrics {
+    flex-direction: column;
+    align-items: center;
+  }
+  .main {
+    padding: 1.5rem;
+  }
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+  .nav-right {
+    flex-wrap: wrap;
+  }
+}
