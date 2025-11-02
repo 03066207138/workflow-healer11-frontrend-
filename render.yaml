@@ -1,0 +1,32 @@
+# ==============================================================
+# 🌐 Render Deployment — Workflow Healer Frontend
+# React Dashboard (entry: src/App.js)
+# Connected to backend → https://workflow-healer11-2.onrender.com
+# Author: Saher Pervaiz
+# ==============================================================
+
+services:
+  - type: web
+    name: workflow-healer-frontend
+    env: static
+    plan: free
+
+    # 🏗️ Build commands
+    buildCommand: npm install && npm run build
+
+    # 📦 Output directory (React build)
+    publishPath: build
+
+    # 🗂️ Root directory of your React app
+    rootDir: .
+
+    # 🌐 Backend connection
+    envVars:
+      - key: REACT_APP_BACKEND_URL
+        value: https://workflow-healer11-2.onrender.com
+
+    # 🚦 Route handling (for React Router or refresh support)
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
