@@ -1,6 +1,6 @@
 # ==============================================================
-# 🌐 Render Deployment — Workflow Healer Frontend (React)
-# Entry: healer-dashboard/src/App.js
+# 🌐 Render Deployment — Workflow Healer Frontend
+# React entry: healer-dashboard/src/App.js
 # Backend: https://workflow-healer11-2.onrender.com
 # ==============================================================
 
@@ -10,21 +10,21 @@ services:
     env: static
     plan: free
 
-    # 🏗️ Build commands
-    buildCommand: npm install && npm run build
-
-    # 📁 Where the build output goes
-    publishPath: build
-
-    # 🗂️ Root directory of your React app
+    # Root directory of your React project
     rootDir: healer-dashboard
 
-    # 🌐 Backend URL (environment variable)
+    # Build commands for React
+    buildCommand: npm install && npm run build
+
+    # Directory to publish (React build output)
+    publishPath: build
+
+    # Environment variable for your backend
     envVars:
       - key: REACT_APP_BACKEND_URL
         value: https://workflow-healer11-2.onrender.com
 
-    # ⚡ React Router support (avoid 404 on refresh)
+    # Route handling for React Router (no 404 on refresh)
     routes:
       - type: rewrite
         source: /*
